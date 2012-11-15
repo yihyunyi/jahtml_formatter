@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email       = ["martin@eimermusic.com"]
   s.homepage    = "https://github.com/eimermusic/jahtml_formatter"
   s.summary     = %q{Tweaked rspec html formatter. More suitable for pdf generation.}
-  s.description = %q{Tweaked rspec html formatter. More suitable for pdf generation.}
+  s.description = %q{Tweaked rspec html formatter. More suitable for pdf generation. At least for me.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
