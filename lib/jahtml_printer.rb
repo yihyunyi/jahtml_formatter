@@ -107,7 +107,7 @@ require 'erb'
 
 <div id="rspec-header">
   <div id="label">
-    <h1>#{File.basename(`git rev-parse --show-toplevel`)}, Automated Software Test Report</h1>
+    <h1>#{File.basename(`git rev-parse --show-toplevel`)}, Software Test Report</h1>
   </div>
 
   <div id="summary">
@@ -199,7 +199,7 @@ EOF
 
         GLOBAL_STYLES = <<-EOF
 #rspec-header {
-  color: #000; height: 4em; border-top: 1em solid #65C400;
+  color: #000; margin-bottom: 1em; border-top: 1em solid #65C400;
 }
 
 .rspec-report h1 {
@@ -207,24 +207,12 @@ EOF
   padding: 10px;
   font-family: "Lucida Grande", Helvetica, sans-serif;
   font-size: 1.8em;
-  position: absolute;
 }
 
-#label {
-  float:left;
-}
-
-#display-filters {
-  float:left;
-  padding: 28px 0 0 40%;
-  font-family: "Lucida Grande", Helvetica, sans-serif;
-}
 
 #summary {
-  float:right;
   padding: 5px 10px;
   font-family: "Lucida Grande", Helvetica, sans-serif;
-  text-align: right;
 }
 
 #summary p {
