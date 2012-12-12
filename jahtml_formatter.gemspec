@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "jahtml_formatter"
-  s.version     = '1.0.3'
+  s.version     = '1.0.4'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Martin Westin"]
   s.email       = ["martin@eimermusic.com"]
