@@ -107,7 +107,7 @@ require 'erb'
 
 <div id="rspec-header">
   <div id="label">
-    <h1>Automated Software Test Report</h1>
+    <h1>#{File.basename(`git rev-parse --show-toplevel`)}, Automated Software Test Report</h1>
   </div>
 
   <div id="summary">
