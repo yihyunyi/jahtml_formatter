@@ -27,7 +27,7 @@ require 'erb'
           @output.puts "    <dd class=\"example passed\"><span class=\"passed_spec_name\">#{h(description)}</span><span class='duration'>#{formatted_run_time}s</span></dd>"
         end
 
-        def print_example_failed( pending_fixed, description, run_time, failure_id, exception, extra_content )
+        def print_example_failed( pending_fixed, description, run_time, failure_id, exception, extra_content, escape_backtrace = false )
           formatted_run_time = sprintf("%.5f", run_time)
 
           @output.puts "    <dd class=\"example #{pending_fixed ? 'pending_fixed' : 'failed'}\">"
@@ -36,7 +36,11 @@ require 'erb'
           @output.puts "      <div class=\"failure\" id=\"failure_#{failure_id}\">"
           if exception
             @output.puts "        <div class=\"message\"><pre>#{h(exception[:message])}</pre></div>"
-            @output.puts "        <div class=\"backtrace\"><pre>#{exception[:backtrace]}</pre></div>"
+            if escape_backtrace
+              @output.puts "        <div class=\"backtrace\"><pre>#{h exception[:backtrace]}</pre></div>"
+            else
+              @output.puts "        <div class=\"backtrace\"><pre>#{exception[:backtrace]}</pre></div>"
+            end
           end
           @output.puts extra_content if extra_content
           @output.puts "      </div>"
