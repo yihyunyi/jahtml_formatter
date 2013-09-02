@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "jahtml_formatter"
-  s.version     = '1.0.4'
+  s.version     = '1.0.5'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Martin Westin"]
   s.email       = ["martin@eimermusic.com"]
@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('rspec', ["~> 2.0"])
+  s.add_dependency('rspec', ["~> 2.14"])
 end
