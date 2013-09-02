@@ -2,6 +2,7 @@
 
 JahtmlFormatter tweakes the CSS of the Rspec HtmlFormatter to make it better for ME to print to pdf and include in V&V Reports. Fun stuff. It it probably not very useful or interesting to anyone else.
 
+[![Gem Version](https://badge.fury.io/rb/jahtml_formatter.png)](http://badge.fury.io/rb/jahtml_formatter)
 
 ## Installation
 
