@@ -1,7 +1,7 @@
 # coding: UTF-8
 module IsoExampleMethods
   def description
-    puts "[hy] #{metadata} #{iso_id}"
+    puts "[hy] #{metadata}"
     
     if metadata.key?(:iso_id)
       ## if the description is empty... we don't do anything
