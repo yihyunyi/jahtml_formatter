@@ -1,7 +1,7 @@
 # coding: UTF-8
 module IsoExampleMethods
   def description
-    if @options.key?(:iso_id)
+    if metadata.key?(:iso_id)
       ## if the description is empty... we don't do anything
       ## I guess it can be empty if an it is defined like so:
       ## it { should have(5).items } - what then?
