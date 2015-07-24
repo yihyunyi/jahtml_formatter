@@ -13,7 +13,7 @@ require 'erb'
         end
 
         def print_example_group_end
-          @output.puts "<script type=\"text/javascript\">write_example_cnt(\"#{@group_id}\");</script>"        
+          @output.puts "<script type=\"text/javascript\">write_example_cnt(\"example_group_#{@group_id}\");</script>"        
           @output.puts "  </dl>"
           @output.puts "</div>"
         end
