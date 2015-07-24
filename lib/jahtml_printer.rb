@@ -202,6 +202,12 @@ function assign_display_style_for_group(classname, display_flag, subgroup_flag) 
     }
   }
 }
+
+function write_example_cnt(ex_group_id) {
+  var cnt = document.getElementsByTagName("dd").length;
+  var ori_str = document.getElementById(ex_group_id).innerHTML;
+  document.getElementById(ex_group_id).innerHTML = ori_str + ": " + cnt;
+}
 EOF
 
         GLOBAL_STYLES = <<-EOF
