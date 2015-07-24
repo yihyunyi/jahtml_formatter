@@ -13,8 +13,8 @@ require 'erb'
           @output.puts REPORT_HEADER
         end
 
-        def print_example_group_end
-          @output.puts "<script type=\"text/javascript\">write_example_cnt(\"#{@ex_div_id}\", \"#{@ex_group_id}\");</script>"        
+       def print_example_group_end
+          @output.puts "  <script type=\"text/javascript\">write_example_cnt(\"#{@ex_div_id}\", \"#{@ex_group_id}\");</script>"
           @output.puts "  </dl>"
           @output.puts "</div>"
         end
@@ -208,7 +208,12 @@ function assign_display_style_for_group(classname, display_flag, subgroup_flag) 
 function write_example_cnt(div_id, group_id) {
   var cnt = document.getElementById(div_id).getElementsByTagName("dd").length;
   var ori_str = document.getElementById(group_id).innerHTML;
-  document.getElementById(group_id).innerHTML = ori_str + "examples: " + cnt;
+
+  if (ori_str.length == 0){
+	document.getElementById(group_id).innerHTML = "sub examples: " + cnt;
+  } else {
+    document.getElementById(group_id).innerHTML = ori_str + "   examples: " + cnt;
+  }
 }
 EOF
 
