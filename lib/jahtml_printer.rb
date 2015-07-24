@@ -4,7 +4,8 @@ require 'erb'
         include ERB::Util # for the #h method
         def initialize(output)
           @output = output
-          @group_id = ''
+          @ex_div_id = ''
+          @ex_group_id = ''
         end
 
         def print_html_start
@@ -13,16 +14,17 @@ require 'erb'
         end
 
         def print_example_group_end
-          @output.puts "<script type=\"text/javascript\">write_example_cnt(\"example_group_#{@group_id}\");</script>"        
+          @output.puts "<script type=\"text/javascript\">write_example_cnt(\"#{@ex_div_id}\", \"#{@ex_group_id}\");</script>"        
           @output.puts "  </dl>"
           @output.puts "</div>"
         end
 
         def print_example_group_start( group_id, description, number_of_parents  )
-          @group_id = group_id
-          @output.puts "<div id=\"div_group_#{group_id}\" class=\"example_group passed\">"
+          @ex_div_id = "div_group_#{group_id}"
+          @ex_group_id = "example_group_#{group_id}"
+          @output.puts "<div id=\"#{@ex_div_id}\" class=\"example_group passed\">"
           @output.puts "  <dl #{indentation_style(number_of_parents)}>"
-          @output.puts "  <dt id=\"example_group_#{group_id}\" class=\"passed\">#{h(description)}</dt>"
+          @output.puts "  <dt id=\"#{@ex_group_id}\" class=\"passed\">#{h(description)}</dt>"
         end
 
         def print_example_passed( description, run_time )
